@@ -1,28 +1,24 @@
 /* General Styles */
 body {
-    font-family: 'Arial', sans-serif;
-    margin: 0;
     padding: 0;
+    margin: 0;
     line-height: 1.6;
-    overflow-x: hidden;
     background-color: #121212;
     color: #ffffff;
+    font-family: 'Arial', sans-serif;
+    overflow-x: hidden;
 }
 
-/* section h2{
-    font-size: 1.3rem;
-} */
-
 section p {
-    font-size: 1.4rem;
+    font-size: 1.6rem;
 }
 
 header {
-    background: #1f1f1f;
-    color: #fff;
-    padding: 1rem 0;
     text-align: center;
+    padding: 1rem 0;
+    background: #1f1f1f;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    color: #fff;
 }
 
 header .logo {
@@ -36,10 +32,10 @@ header .logo {
 }
 
 header nav ul {
-    list-style: none;
-    padding: 0;
     display: flex;
     justify-content: center;
+    padding: 0;
+    list-style: none;
     gap: 2rem;
 }
 
@@ -58,11 +54,11 @@ header nav ul li a:hover {
 }
 
 #hero {
-    text-align: center;
+    position: relative;
     padding: 4rem 1rem;
     background: #1f1f1f;
-    position: relative;
     background: linear-gradient(135deg, #1e1e1e, #343434);
+    text-align: center;
 }
 
 .cta{
@@ -72,9 +68,8 @@ header nav ul li a:hover {
 .hero-image {
     width: 150px;
     height: 150px;
-    border-radius: 50%;
-    /* margin-top: 2rem; */
     border: 4px solid #00aaff;
+    border-radius: 50%;
 }
 
 #hero h1 {
@@ -90,10 +85,10 @@ header nav ul li a:hover {
 #hero .cta {
     display: inline-block;
     padding: 0.5rem 1.5rem;
+    border-radius: 5px;
     background: #00aaff;
     color: #fff;
     text-decoration: none;
-    border-radius: 5px;
     font-weight: bold;
     transition: background 0.3s;
 }
@@ -104,13 +99,17 @@ header nav ul li a:hover {
 
 /* Card Styles */
 #titles {
-    background: #2a2a2a;
     padding: 4rem 1rem;
+    background: #2a2a2a;
     text-align: center;
 }
 
 #titles h2 {
     margin-bottom: 2rem;
+}
+
+#about p {
+    white-space: pre-line; /* Permite respetar los saltos de línea en el HTML */
 }
 
 .cards {
@@ -121,11 +120,11 @@ header nav ul li a:hover {
 }
 
 .card {
-    background: #1f1f1f;
+    width: 250px;
     padding: 1.5rem;
+    background: #1f1f1f;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 250px;
     transition: transform 0.3s, box-shadow 0.3s;
 }
 
@@ -155,15 +154,41 @@ header nav ul li a:hover {
     transition: transform 0.5s ease-in-out;
 }
 
-.project-slide img {
-    margin: 0 auto;
-    display: block;
-    min-height: 200px;
-    height: 700px;
-    /* width: auto; */
+.project-img-container {
+    display: flex;
     max-width: 100%;
+    height: 400px;
+    margin: 0 auto;
     object-fit: cover;
+    justify-content: center;
+    align-items: center;
+}
 
+
+.project-slide img {
+    width: 100%;
+    height: auto;
+    max-height: 100%;
+
+}
+
+/* Botones de navegación prev y next centrados verticalmente */
+button.prev, button.next {
+    position: absolute;
+    display: flex;
+    width: 40px; /* Ajuste del ancho */
+    height: 40px; /* Ajuste del alto */
+    top: 40%; /* Alinea verticalmente al 50% del contenedor padre */
+    border: none;
+    border-radius: 50%;
+    color: white;
+    background: rgba(0,0,0,0.7);
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    z-index: 1; /* Asegura que los botones estén por encima del contenido */
+    transform: translateY(-50%); /* Ajusta la posición para centrar verticalmente */
+    cursor: pointer;
 }
 
 /* Media query para pantallas grandes */
@@ -171,6 +196,24 @@ header nav ul li a:hover {
     .project-slide img {
         width: 50%; /* Ajusta el ancho a 50% del contenedor en pantallas grandes */
     }
+
+    body{
+        font-size: 1.6rem;
+    }
+
+    section p{
+        font-size: 1.8rem;
+    }
+
+    #hero p{
+        font-size: 1.7rem;
+    }
+
+    main {
+        width: 70%;
+        margin: 0 auto;
+    }
+
 }
 
 
@@ -178,22 +221,6 @@ header nav ul li a:hover {
     display: block; /* Mostrar solo la slide activa */
 }
 
-button.prev, button.next {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: rgba(0,0,0,0.7);
-    color: white;
-    border: none;
-    width: 50px; /* Ancho fijo */
-    height: 50px; /* Alto fijo */
-    cursor: pointer;
-    font-size: 1.5rem;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
 
 button.prev {
     left: 10px;
@@ -205,11 +232,9 @@ button.next {
 
 .project-slide h3 {
     text-align: center;
-    /* margin-top: 1rem; Ajusta el margen superior según sea necesario */
 }
 .project-slide p {
     text-align: center;
-    /* margin-top: 1rem; Ajusta el margen superior según sea necesario */
 }
 
 /* Scroll Animations */
@@ -226,18 +251,16 @@ section.in-view {
 }
 
 .contact-info {
+    min-width: 40%;
+    max-width: 80%;
+    padding: 5px;
+    margin: 1.5rem auto;
+    align-items: center;
+    text-align: center;
     background-color: #1368a0; /* Fondo azul */
     color: white; /* Texto blanco */
     border-radius: 10px; /* Bordes redondeados */
-    margin-top: 1rem; /* Margen superior para separar del formulario */
-    text-align: center; /* Centramos el texto */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra */
-    padding: 5px;
-    min-width: 40%;
-    max-width: 80%;
-    align-items: center;
-    text-align: center;
-    margin: 1.5rem auto;
 
 }
 
@@ -245,9 +268,14 @@ section.in-view {
     margin: 0;
 }
 
+#contact{
+    width: 50%;
+    margin: 0 auto;
+}
+
 
 /* Responsive Styles */
-@media (max-width: 425px) {
+@media (max-width: 600px) {
     header nav ul {
         flex-direction: column;
         gap: 1rem;
@@ -261,9 +289,16 @@ section.in-view {
         right: -15px;
     }
 
+    button.prev, button.next {
+        position: absolute;
+        top: 205px;
+    }
+
     .project-slide img{
         width: 100%;
-        height: 200px;
+        height: auto;
+        min-height: auto;
+
     }
 
     .slider-container {
@@ -281,13 +316,20 @@ section.in-view {
     section p{
         text-align: center;
     }
+
+    #contact{
+        width: auto;
+        margin: 0 auto;
+        text-align: center;
+    }
+
 }
 
 footer {
-    text-align: center;
     padding: 1rem;
     background: #1f1f1f;
     color: #fff;
+    text-align: center;
 }
 
 form {
@@ -310,10 +352,10 @@ form input, form textarea {
 
 form button {
     padding: 0.5rem;
-    background: #00aaff;
-    color: #fff;
     border: none;
     border-radius: 5px;
+    background: #00aaff;
+    color: #fff;
     cursor: pointer;
 }
 

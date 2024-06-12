@@ -38,7 +38,7 @@ document.addEventListener("DOMContentLoaded", function() {
         showSlide(currentProjectIndex);
     }
 
-    setInterval(showNextProjectSlide, 3000);
+    setInterval(showNextProjectSlide, 7000);
 
     document.querySelector('.project-prev').addEventListener('click', showPrevProjectSlide);
     document.querySelector('.project-next').addEventListener('click', showNextProjectSlide);
