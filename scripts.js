@@ -22,11 +22,12 @@ document.addEventListener("DOMContentLoaded", function() {
 
     function showSlide(index) {
         projectSlides.forEach((slide, i) => {
-            slide.style.transform = `translateX(${100 * (i - index)}%)`;
-            slide.style.display = (i === index) ? 'block' : 'none';
+            slide.classList.remove('active');
+            slide.style.display = 'none';
         });
+        projectSlides[index].classList.add('active');
+        projectSlides[index].style.display = 'flex';
     }
-    
 
     function showNextProjectSlide() {
         currentProjectIndex = (currentProjectIndex + 1) % projectSlides.length;
@@ -49,10 +50,11 @@ document.addEventListener("DOMContentLoaded", function() {
         threshold: 0.1
     };
 
-    const observer = new IntersectionObserver((entries) => {
+    const observer = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('in-view');
+                observer.unobserve(entry.target);
             }
         });
     }, options);
@@ -63,4 +65,32 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Initialize slider position
     showSlide(currentProjectIndex);
+
+    // Theme toggle
+    const themeToggle = document.getElementById('theme-toggle');
+    const body = document.body;
+    const lightThemeClass = 'light-theme';
+    const icon = themeToggle.querySelector('i');
+
+    function setTheme(isLight) {
+        if (isLight) {
+            body.classList.add(lightThemeClass);
+            icon.classList.remove('fa-sun');
+            icon.classList.add('fa-moon');
+        } else {
+            body.classList.remove(lightThemeClass);
+            icon.classList.remove('fa-moon');
+            icon.classList.add('fa-sun');
+        }
+        localStorage.setItem('isLightTheme', isLight);
+    }
+
+    themeToggle.addEventListener('click', () => {
+        const isLight = !body.classList.contains(lightThemeClass);
+        setTheme(isLight);
+    });
+
+    // Load the saved theme from localStorage
+    const savedTheme = localStorage.getItem('isLightTheme') === 'true';
+    setTheme(savedTheme);
 });
