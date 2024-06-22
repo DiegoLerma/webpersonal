@@ -414,6 +414,8 @@ body.dark-theme #contact-form {
         position: sticky; /* Asegura que los elementos hijos se posicionen relativamente */
     }
 
+
+
     header .logo {
         margin-bottom: 0; /* Elimina el margen inferior del logo */
         padding: 0; /* Elimina el padding del logo */
@@ -480,6 +482,7 @@ body.dark-theme #contact-form {
 
     section p {
         text-align: center;
+        font-size: 1.2rem;
     }
 
     #contact {
