@@ -196,7 +196,10 @@ body.light-theme #titles {
     flex-wrap: wrap;
     justify-content: center;
     gap: 2rem;
+    align-items: center; /* Añade esta línea para centrar verticalmente */
+    min-height: 50vh; /* Ajusta según sea necesario para una mejor alineación vertical */
 }
+
 
 .card {
     width: 250px;
@@ -403,26 +406,42 @@ body.dark-theme #contact-form {
 }
 
 /* Responsive Styles */
-/* Responsive Styles */
 @media (max-width: 600px) {
     header {
         display: flex;
         flex-direction: column;
         align-items: center;
+        position: sticky; /* Asegura que los elementos hijos se posicionen relativamente */
+    }
+
+    header .logo {
+        margin-bottom: 0; /* Elimina el margen inferior del logo */
+        padding: 0; /* Elimina el padding del logo */
     }
 
     header nav ul {
         display: none; /* Oculta los elementos de navegación en móvil */
     }
 
-    header #theme-toggle {
-        display: none; /* Oculta el botón de tema en móvil */
+    header .logo-image {
+        width: 50px; /* Ajusta el tamaño del logo */
+        height: auto;
+        margin: 0.5rem 0; /* Ajusta el margen para centrar el logo */
     }
 
-    header .logo-image {
-        margin: 1rem 0; /* Centra el logo y añade margen */
+    header #theme-toggle {
+        display: block; /* Asegura que el botón de tema se muestre en móvil */
+        position: absolute;
+        top: 38px; /* Ajusta según sea necesario */
+        right: 25px; /* Ajusta según sea necesario */
+        background: none;
+        border: none;
+        color: var(--text-color);
+        font-size: 1.5rem; /* Ajusta el tamaño del icono */
+        cursor: pointer;
+        z-index: 1001; /* Asegura que el botón esté por encima de otros elementos */
     }
-    
+}
 
     .project-img-container {
         width: 100%;
@@ -468,7 +487,6 @@ body.dark-theme #contact-form {
         margin: 0 auto;
         text-align: center;
     }
-}
 
 
 @media (min-width: 1024px) {
