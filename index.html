@@ -54,23 +54,35 @@
         <section id="titles">
             <h2>Formación Académica</h2>
             <div class="cards">
-                <div class="card">
+                <div class="card" data-id="medico-cirujano" onclick="showModal('Médico Cirujano (General)')">
                     <h3>Médico Cirujano</h3>
                     <p>Universidad de Guanajuato</p>
                 </div>
-                <div class="card">
+                <div class="card" data-id="desarrollo-software" onclick="showModal('Licenciado en Desarrollo de Software')">
                     <h3>Licenciado en Desarrollo de Software</h3>
                     <p>Instituto de Estudios Universitarios</p>
                 </div>
-                <div class="card">
+                <div class="card" data-id="neuropsicologia" onclick="showModal('Estudios en Neuropsicologia')">
                     <h3>Diplomado en Neuropsicología</h3>
                     <p>Centro de Estudios en Neurociencias y Psicología del Estado de Chiapas</p>
                 </div>
-                <div class="card">
+                <div class="card" data-id="terapia-cognitivo-conductual" onclick="showModal('Estudios en Terapia Cognitivo Conductual')">
                     <h3>Diplomado en Terapia Cognitivo-Conductual</h3>
                     <p>Universidad Anáhuac Puebla</p>
                 </div>
-                <div class="card">
+                <!-- <div class="card" data-id="terapia-humanista-existencial" onclick="showModal('terapia-humanista-existencial')">
+                    <h3>Diplomado en Terapia Humanista Existencial</h3>
+                    <p>Feelink</p>
+                </div>
+                <div class="card" data-id="hipnosis-terapia-breve" onclick="showModal('hipnosis-terapia-breve')">
+                    <h3>Diplomado en Hipnosis Ericksoniana y Terapia Breve</h3>
+                    <p>Feelink</p>
+                </div> -->
+                <div class="card" data-id="certificacion-azure-ai" onclick="showModal('Certificacion Azure AI')">
+                    <h3>Azure AI Engineer Associate</h3>
+                    <p>Certificación por Microsoft</p>
+                </div>
+                <div class="card" data-id="inteligencia-artificial" onclick="showModal('Maestro Inteligencia Artificial')">
                     <h3>Maestría en Inteligencia Artificial</h3>
                     <p>Universidad Católica de Ávila (en curso)</p>
                 </div>
@@ -79,18 +91,16 @@
 
         <section id="about">
             <h2>Sobre Mí</h2>
-            <p>Licenciado en Desarrollo de Software y Médico Cirujano, actualmente cursando una Maestría en Inteligencia Artificial en la Universidad Católica de Ávila, España.
-
-            Con experiencia en la implementación de tecnologías avanzadas en el ámbito médico, me especializo en el desarrollo de aplicaciones de inteligencia artificial para diagnóstico y tratamiento médico, así como soluciones tecnológicas para optimización, potenciación y automatización de procesos en el sector salud.
-
-            Tengo múltiples certificaciones en Machine Learning y Desarrollo de Software.
-            
-            Además, soy emprendedor, con proyectos innovadores en salud como "TriageAI" y "Neuroglias".
-
-            Actualmente participo en múltiples protocolos de investigación en los hospitales UMAE 48 y HRAE con el Grupo Multidisciplinario de Investigación en Inteligencia Artificial.
-
-            He impartido múltiples conferencias para actualización de personal de salud y para fomentar la adopción segura de nuevas tecnologías en la práctica clínica.
-            </p>
+            <p>Soy Médico Cirujano (General) por la Universidad de Guanajuato, con estudios especializados en psicoterapia Cognitivo-Conductual, Humanista existencial y Terapia breve.</p> 
+            <p>Doy consulta de medicina general, con la posibilidad de complementar el tratamiento médico ordinario con técnicas psicológicas avanzadas</p> 
+            <p>De esta forma, puedo tratar cualquier tipo de padecimiento de forma integral con un enfoque holístico y con tiempos de mejora acelerados.</p>
+            <br>
+            <p>También, tengo experiencia en la implementación de tecnologías avanzadas en el ámbito médico, me especializo en el desarrollo de aplicaciones de inteligencia artificial para diagnóstico y tratamiento médico, así como soluciones tecnológicas para optimización, potenciación y automatización de procesos en el sector salud.</p>
+            <p>Tengo múltiples certificaciones en Machine Learning y Desarrollo de Software (programación).</p>
+            <p>Además, soy emprendedor, con proyectos innovadores en salud como "TriageAI" y "Neuroglias" que buscan optimizar los procesos hospitalarios y durante la consulta médica con tecnología de punta, con un enfoque en la seguridad y el bienestar del paciente.</p>
+            <p>Actualmente participo en múltiples protocolos de investigación para aplicar de forma segura y eficiente la Inteligencia Artificial y otras tecnologías emergentes en el ámbito médico.</p>
+            <p>He impartido múltiples conferencias a público general, a personal de salud y a ingenieros para la difusión y el aprendizaje continuo sobre los temas más relevantes del momento en el ámbito médico, tecnológico y de salud mental.</p>
+            <p>Con cada proyecto y consulta, busco fomentar una adopción segura y ordenada de las nuevas tecnologías, téncnicas y formas terapéuticas para que <u>cada paso hacia adelante que dé la Ciencia, llegue rápidamente y primero a mis pacientes y a los de mis colegas.</u></p>
         </section>
 
         <section id="experience">
@@ -109,47 +119,47 @@
             <h2>Proyectos Destacados</h2>
             <div class="slider-container">
                 <div class="project-slider" id="project-slider">
-                    <div class="project-slide">
+                    <div class="project-slide" data-id="health-gpt" onclick="showModal('Health-GPT')">
                         <figure class="project-img-container">
                             <img src="assets/health-gpt.png" alt="Proyecto HealthGPT">
                         </figure>
                         <h3>HealthGPT</h3>
                         <p>Inteligencia artificial aplicada en salud, 2° lugar en el Hackatón de Impacto 2023.</p>
                     </div>
-                    <div class="project-slide">
+                    <div class="project-slide" data-id="gestamor" onclick="showModal('Gestamor')">
                         <figure class="project-img-container">
                             <img src="assets/gestamor.jpg" alt="Proyecto Gestamor">
                         </figure>
                         <h3>Gestamor</h3>
                         <p>Red estatal de seguimiento, intervención y empoderamiento a la paciente embarazada.</p>
                     </div>
-                    <div class="project-slide">
+                    <div class="project-slide" data-id="astrocyte" onclick="showModal('Astrocyte')">
                         <figure class="project-img-container">
                             <img src="assets/mymedic.jpg" alt="Proyecto MyMedic">
                         </figure>
-                        <h3>Neuroglias (antes MyMedic)</h3>
+                        <h3>Astrocyte (antes MyMedic)</h3>
                         <p>Plataforma de Expediente Clínico Electrónico para optimizar todos los procesos en el consultorio.</p>
                     </div>
                 </div>
                 <button class="prev project-prev" aria-label="Previous slide">❮</button>
-                <button class="next project-next" aria-label="Next  slide">❯</button>
+                <button class="next project-next" aria-label="Next slide">❯</button>
             </div>
         </section>
 
         <section id="contact">
             <h2>Contacto</h2>
-            <form id="contact-form" autocomplete="on">
+            <form id="contact-form">
                 <label for="name">Nombre:</label>
-                <input type="text" id="name" name="name" autocomplete="name" required>
+                <input type="text" id="name" name="name" required>
                 
                 <label for="email">Email:</label>
-                <input type="email" id="email" name="email" autocomplete="email" required>
+                <input type="email" id="email" name="email" required>
                 
                 <label for="phone">Teléfono:</label>
-                <input type="tel" id="phone" name="phone" autocomplete="tel" required>
+                <input type="tel" id="phone" name="phone" required>
                 
                 <label for="message">Mensaje:</label>
-                <textarea id="message" name="message" autocomplete="on" required></textarea>
+                <textarea id="message" name="message" required></textarea>
                 
                 <button type="submit">Enviar</button>
             </form>
@@ -159,12 +169,28 @@
                 <p>Teléfono: +52-473-7390-870</p>
             </div>
         </section>
+        
     </main>
 
     <footer>
         <p>&copy;  Todos los derechos reservados.</p>
     </footer>
 
+    <!-- Tarjeta flotante -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button" onclick="closeModal()">&times;</span>
+            <div id="modal-text"></div>
+        </div>
+    </div>
+
     <script src="scripts.js" defer></script>
+    <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function() {
+            emailjs.init("2vJ_WSS2Rm_pqS04Q"); // Reemplaza "YOUR_USER_ID" con tu User ID de EmailJS
+        })();
+    </script>
+
 </body>
 </html>
