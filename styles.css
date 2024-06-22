@@ -203,6 +203,7 @@ body.light-theme #titles {
 
 .card {
     width: 250px;
+    height: 200px;
     padding: 1.5rem;
     background: var(--card-background-dark);
     border: 1px solid #333;
