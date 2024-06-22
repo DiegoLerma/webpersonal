@@ -57,10 +57,12 @@ header .logo {
     margin: 0;
 }
 
-.logo-image {
+header .logo-image {
     width: 80px;
     height: auto;
+    margin: 1rem 0; /* Ajuste el margen para que el logo tenga suficiente espacio */
 }
+
 
 header nav{
     margin: 0 auto;
@@ -404,23 +406,23 @@ body.dark-theme #contact-form {
 /* Responsive Styles */
 @media (max-width: 600px) {
     header {
+        display: flex;
         flex-direction: column;
         align-items: center;
-    }
-
-    header .logo {
-        margin-bottom: 1rem;
     }
 
     header nav ul {
-        flex-direction: column;
-        align-items: center;
-        gap: 1rem;
+        display: none; /* Oculta los elementos de navegación en móvil */
     }
 
     header #theme-toggle {
-        margin-top: 1rem;
+        display: none; /* Oculta el botón de tema en móvil */
     }
+
+    header .logo-image {
+        margin: 1rem 0; /* Centra el logo y añade margen */
+    }
+    
 
     .project-img-container {
         width: 100%;
@@ -449,9 +451,9 @@ body.dark-theme #contact-form {
         height: 75px;
     }
 
-    .contact-info {
+    /* .contact-info {
         width: 100%;
-    }
+    } */
 
     .contact-info p {
         font-size: 0.8rem;
