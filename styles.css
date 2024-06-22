@@ -530,7 +530,58 @@ section p {
     width: auto;
     margin: 0 auto;
     text-align: center;
+    /* background-color: #f3e1d1; */
+    /* border-radius: 15px; */
 }
+
+#appointments{
+    width: auto;
+    margin: 0 auto;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: background var(--transition-speed);
+    background-color: rgb(220, 242, 255);
+    border-radius: 15px;
+}
+
+#google-calendar-scheduling {
+    text-align: center;
+    padding: 2rem 0;
+}
+
+.qxCTlb{
+    padding: 1rem 1rem;
+    color: rgb(255, 255, 255);
+    background-color: rgb(0, 122, 204);
+    font-size: 1rem;
+}
+
+#google-calendar-scheduling .cal-schedule-btn {
+    background-color: var(--secondary-color);
+    color: var(--text-color-dark);
+    border: none;
+    border-radius: var(--border-radius);
+    padding: 1rem 2rem; /* Incrementar el padding */
+    font-size: 1.2rem; /* Incrementar el tamaño de la fuente */
+    font-weight: bold;
+    cursor: pointer;
+    transition: background var(--transition-speed), transform var(--transition-speed);
+}
+
+body.light-theme #google-calendar-scheduling .cal-schedule-btn {
+    color: var(--text-color-light);
+}
+
+#google-calendar-scheduling .cal-schedule-btn:hover {
+    background-color: var(--primary-color);
+    transform: scale(1.05); /* Añadir un efecto de escala en hover */
+}
+
+body.light-theme #google-calendar-scheduling .cal-schedule-btn:hover {
+    background-color: var(--primary-color);
+    transform: scale(1.05); /* Añadir un efecto de escala en hover */
+}
+
 
 /* Responsive Styles */
 @media (max-width: 600px) {
