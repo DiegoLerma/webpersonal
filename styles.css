@@ -266,6 +266,52 @@ section.in-view {
     transform: translateY(0);
 }
 
+/* Estilos generales para las tarjetas */
+.about-cards, .experience-cards {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+
+.about-card, .experience-card {
+    width: 70%;
+    background: var(--card-background-dark);
+    color: var(--text-color-dark);
+    padding: 1rem;
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: background var(--transition-speed), color var(--transition-speed);
+    text-align: left;
+}
+
+body.light-theme .about-card, body.light-theme .experience-card {
+    background: var(--card-background-light);
+    color: var(--text-color-light);
+}
+
+figure {
+    margin: 0 0 1rem 0;
+}
+
+figure img {
+    width: 100%;
+    border-radius: var(--border-radius);
+    max-height: 400px;
+    object-fit: cover;
+}
+
+
+.about-card h3, .experience-card h3 {
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+.about-card p, .experience-card p {
+    font-size: 1rem;
+}
+
+
 /* Slider Styles */
 .slider-container {
     position: relative;
@@ -654,6 +700,14 @@ body.dark-theme footer {
         padding: 0 !important;
     }
 
+    .about-card, .experience-card {
+        width: 90%;
+    }
+
+    figure img {
+        max-height: 250px;
+    }
+
     
 }
 
@@ -674,6 +728,21 @@ body.dark-theme footer {
         width: 70%;
         margin: 0 auto;
     }
+
+    #experience, #about {
+        width: 60%;
+        margin: 0 auto;
+    }
+    
+    #experience .about-card, #about .about-card{
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    .about-card, .experience-card {
+        width: 100%;
+    }
+
 }
 
 body.dark-theme #appointments {
