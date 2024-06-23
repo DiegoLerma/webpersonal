@@ -1,9 +1,13 @@
 :root {
     --primary-color: #007acc;
     --secondary-color: #00aaff;
+    --tertiary-color: #2a2a2a;
     --background-color-dark: #121212;
     --text-color-dark: #ffffff;
-    --accent-color: #17e9bf;
+    --accent-color: #00c4ff;
+    /* --light-accent-color: #16e9be; */
+    --light-background-color: #bfddf7;
+    --light-background-color: #dcf2ff;
     --card-background-dark: #1f1f1f;
     --card-hover-dark: #333333;
     --border-radius: 10px;
@@ -400,7 +404,7 @@ body.dark-theme #contact-form {
 .contact-info {
     margin-top: 2rem;
     padding: 1rem;
-    background-color: var(--accent-color);
+    background-color: #9de8ff;
     color: var(--background-color);
     border-radius: var(--border-radius);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -534,26 +538,29 @@ section p {
     /* border-radius: 15px; */
 }
 
-#appointments{
+body.light-theme .contact-info{
+    background-color: var(--light-background-color);
+}
+
+#appointments {
     width: auto;
     margin: 0 auto;
     text-align: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: background var(--transition-speed);
-    background-color: rgb(220, 242, 255);
+    background-color: var(--tertiary-color);
     border-radius: 15px;
 }
 
+body.light-theme #appointments {
+    background-color: var(--light-accent-color);
+}
+
+
+/* Estilos para el botón de "Programar una cita" */
 #google-calendar-scheduling {
     text-align: center;
     padding: 2rem 0;
-}
-
-.qxCTlb{
-    padding: 1rem 1rem;
-    color: rgb(255, 255, 255);
-    background-color: rgb(0, 122, 204);
-    font-size: 1rem;
 }
 
 #google-calendar-scheduling .cal-schedule-btn {
@@ -581,6 +588,21 @@ body.light-theme #google-calendar-scheduling .cal-schedule-btn:hover {
     background-color: var(--primary-color);
     transform: scale(1.05); /* Añadir un efecto de escala en hover */
 }
+
+
+footer {
+    padding: 1rem;
+    background: var(--card-background);
+    color: var(--text-color);
+    text-align: center;
+    transition: background var(--transition-speed);
+}
+
+body.dark-theme footer {
+    background: var(--dark-card-background);
+}
+
+
 
 
 /* Responsive Styles */
@@ -619,6 +641,20 @@ body.light-theme #google-calendar-scheduling .cal-schedule-btn:hover {
         cursor: pointer;
         z-index: 1001; /* Asegura que el botón esté por encima de otros elementos */
     }
+
+    .fvYXKd{
+        width: 80% !important;
+    }
+
+
+    .VfPpkd-fmcmS-yrriRe {
+        width: 80% !important;
+    }
+    .hur54b {
+        padding: 0 !important;
+    }
+
+    
 }
 
 @media (min-width: 1024px) {
@@ -640,14 +676,6 @@ body.light-theme #google-calendar-scheduling .cal-schedule-btn:hover {
     }
 }
 
-footer {
-    padding: 1rem;
-    background: var(--card-background);
-    color: var(--text-color);
-    text-align: center;
-    transition: background var(--transition-speed);
-}
-
-body.dark-theme footer {
+body.dark-theme #appointments {
     background: var(--dark-card-background);
 }
