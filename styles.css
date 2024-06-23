@@ -743,6 +743,12 @@ body.dark-theme footer {
         width: 100%;
     }
 
+    figure {
+        /* margin: 0 0 1rem 0; */
+        width: 70%;
+        margin: 0 auto;
+    }
+
 }
 
 body.dark-theme #appointments {
