@@ -743,6 +743,7 @@ body.dark-theme footer {
 
     section {
         padding: 2rem;
+    }
 }
 
 @media (min-width: 1024px) {
