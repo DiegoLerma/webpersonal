@@ -69,32 +69,59 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Slider for projects
     const projectSlides = document.querySelectorAll('#project-slider .project-slide');
-    let currentProjectIndex = 0;
+    const dots = document.querySelectorAll('.carousel-dots .dot');
+    let currentIndex = 0;
 
     function showSlide(index) {
         projectSlides.forEach((slide, i) => {
-            slide.classList.remove('active');
             slide.style.display = 'none';
+            dots[i].classList.remove('active');
         });
-        projectSlides[index].classList.add('active');
         projectSlides[index].style.display = 'flex';
+        dots[index].classList.add('active');
     }
 
-    function showNextProjectSlide() {
-        currentProjectIndex = (currentProjectIndex + 1) % projectSlides.length;
-        showSlide(currentProjectIndex);
+    function nextSlide() {
+        currentIndex = (currentIndex + 1) % projectSlides.length;
+        showSlide(currentIndex);
     }
 
-    function showPrevProjectSlide() {
-        currentProjectIndex = (currentProjectIndex - 1 + projectSlides.length) % projectSlides.length;
-        showSlide(currentProjectIndex);
+    function prevSlide() {
+        currentIndex = (currentIndex - 1 + projectSlides.length) % projectSlides.length;
+        showSlide(currentIndex);
     }
 
-    setInterval(showNextProjectSlide, 7000);
+    document.querySelector('.project-next').addEventListener('click', nextSlide);
+    document.querySelector('.project-prev').addEventListener('click', prevSlide);
+    dots.forEach((dot, index) => {
+        dot.addEventListener('click', () => {
+            showSlide(index);
+            currentIndex = index;
+        });
+    });
 
-    document.querySelector('.project-prev').addEventListener('click', showPrevProjectSlide);
-    document.querySelector('.project-next').addEventListener('click', showNextProjectSlide);
+    showSlide(currentIndex);
 
+    // Add swipe functionality
+    let startX;
+    const slider = document.querySelector('.project-slider');
+
+    slider.addEventListener('touchstart', (e) => {
+        startX = e.touches[0].clientX;
+    });
+
+    slider.addEventListener('touchmove', (e) => {
+        if (!startX) return;
+        let diffX = startX - e.touches[0].clientX;
+
+        if (diffX > 50) {
+            nextSlide();
+            startX = null;
+        } else if (diffX < -50) {
+            prevSlide();
+            startX = null;
+        }
+    });
     // Scroll animations
     const sections = document.querySelectorAll('section');
     const options = {
