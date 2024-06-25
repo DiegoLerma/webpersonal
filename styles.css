@@ -670,6 +670,51 @@ body.dark-theme footer {
     font-size: 2rem !important;
 }
 
+#social-media {
+    padding: 4rem 1rem;
+    background: var(--background-section-dark);
+    text-align: center;
+    transition: background var(--transition-speed), color var(--transition-speed);
+}
+
+body.light-theme #social-media {
+    background: var(--background-section-light);
+}
+
+#social-media h2 {
+    margin-bottom: 2rem;
+    color: var(--text-color-dark);
+}
+
+body.light-theme #social-media h2 {
+    color: var(--text-color-light);
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.social-links a {
+    font-size: 3rem;
+    color: var(--primary-color);
+    transition: color var(--transition-speed), transform var(--transition-speed);
+}
+
+body.light-theme .social-links a {
+    color: var(--secondary-color);
+}
+
+.social-links a:hover {
+    color: var(--secondary-color);
+    transform: scale(1.2);
+}
+
+body.light-theme .social-links a:hover {
+    color: var(--primary-color);
+}
+
 
 /* Responsive Styles */
 @media (max-width: 600px) {

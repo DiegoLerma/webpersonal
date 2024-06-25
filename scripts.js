@@ -36,7 +36,7 @@ document.addEventListener("DOMContentLoaded", function() {
         const phone = formData.get('phone');
         const message = formData.get('message');
 
-        const whatsappMessage = `Hola, mi nombre es: ${name}. Vengo de tu página web y me gustaría contactarte para decirte lo siguiente:%0AMensaje: ${message}`;
+        const whatsappMessage = `Hola, mi nombre es: ${name}. Vengo de tu página web y me gustaría contactarte para decirte lo siguiente:%0A${message}`;
         const whatsappURL = `https://wa.me/524737390870?text=${whatsappMessage}`;
 
         // Convertir los clics a una cadena de texto
@@ -56,11 +56,11 @@ document.addEventListener("DOMContentLoaded", function() {
             clicksOnProjects: clicksOnProjectsText
         })
         .then(() => {
-            // alert('Mensaje enviado!');
+            alert('¡Gracias por enviarme mensaje. Te contactaré a la brevedad posible!');
             contactForm.reset();
 
             // Redirigir a WhatsApp
-            window.open(whatsappURL, '_blank');
+            // window.open(whatsappURL, '_blank');
         }, (err) => {
             alert('Error al enviar el mensaje. Inténtalo de nuevo.');
             console.error('Error:', err);
@@ -71,6 +71,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const projectSlides = document.querySelectorAll('#project-slider .project-slide');
     const dots = document.querySelectorAll('.carousel-dots .dot');
     let currentIndex = 0;
+    let currentProjectIndex = 0;
 
     function showSlide(index) {
         projectSlides.forEach((slide, i) => {
@@ -153,12 +154,12 @@ document.addEventListener("DOMContentLoaded", function() {
     function setTheme(isLight) {
         if (isLight) {
             body.classList.add(lightThemeClass);
-            icon.classList.remove('fa-sun');
-            icon.classList.add('fa-moon');
-        } else {
-            body.classList.remove(lightThemeClass);
             icon.classList.remove('fa-moon');
             icon.classList.add('fa-sun');
+        } else {
+            body.classList.remove(lightThemeClass);
+            icon.classList.remove('fa-sun');
+            icon.classList.add('fa-moon');
         }
         localStorage.setItem('isLightTheme', isLight);
     }
