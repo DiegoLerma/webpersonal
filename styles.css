@@ -397,7 +397,7 @@ button.next {
 
 /* Contact Form */
 #contact {
-    padding: 4rem 1rem;
+    padding: 2rem 1rem;
     background: var(--background-color);
     text-align: center;
     transition: background var(--transition-speed);
@@ -601,10 +601,11 @@ body.light-theme .contact-info{
     width: auto;
     margin: 0 auto;
     text-align: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* box-shadow: -7px 10px 20px -1px rgba(0,0,0,0.55); */
     transition: background var(--transition-speed);
     background-color: var(--tertiary-color);
     border-radius: 15px;
+    margin-bottom: 2rem;
 }
 
 h2{
