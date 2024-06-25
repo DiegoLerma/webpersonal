@@ -797,6 +797,10 @@ body.light-theme .social-links a:hover {
         font-size: 1.6rem;
     }
 
+    header{
+        padding: 1rem 4rem;
+    }
+
     section p {
         font-size: 1.8rem;
     }
